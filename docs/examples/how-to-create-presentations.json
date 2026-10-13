@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "title": "How to create presentations in my-slides",
+  "slug": "how-to-create-presentations",
+  "templateId": "astro",
+  "visibility": "public",
+  "meta": {
+    "description": "Public help deck: CMS workflow, import/export, and using an AI agent to generate JSON.",
+    "purpose": "help"
+  },
+  "backgroundScene": "minimal",
+  "backgroundOpacity": 0.45,
+  "slides": [
+    {
+      "id": "title",
+      "layout": "title",
+      "markdown": "# How to create presentations\n\nmy-slides · CMS + Reveal.js · JSON import/export",
+      "notes": "Public help deck linked from the header ? icon."
+    },
+    {
+      "id": "section-cms",
+      "layout": "section",
+      "markdown": "## Part 1 · In the CMS"
+    },
+    {
+      "id": "cms-new",
+      "layout": "content",
+      "markdown": "## Create a new deck\n\n1. Sign in (when Cognito is enabled).\n2. Click **New presentation** on the home page.\n3. Set **title**, **slug** (URL path), **template**, and **visibility**.\n4. Add slides: pick a layout, write **Markdown** in the editor.\n5. Use **Upload image** to insert `![alt](url)` into a slide.\n6. **Save** often. Open **Present** to preview at `/p/your-slug`."
+    },
+    {
+      "id": "cms-import",
+      "layout": "content",
+      "markdown": "## Import or replace JSON\n\n- **Import JSON** on the home page creates a **new** deck.\n- In the editor, **Replace this presentation** overwrites the current deck from a JSON file (same slug/URL if you keep the slug in JSON).\n- Export anytime from the editor for backup or to hand to an agent."
+    },
+    {
+      "id": "cms-visibility",
+      "layout": "content",
+      "markdown": "## Visibility\n\n| Value | Who can open `/p/slug` |\n| --- | --- |\n| `public` | Anyone with the link |\n| `authenticated` | Signed-in users only |\n\nUse **public** for internal help docs and shared demos. Use **authenticated** for sensitive content."
+    },
+    {
+      "id": "section-agent",
+      "layout": "section",
+      "markdown": "## Part 2 · Use an AI agent"
+    },
+    {
+      "id": "agent-overview",
+      "layout": "content",
+      "markdown": "## Ask the agent for one JSON file\n\nDo **not** ask for PowerPoint or loose Markdown files. Ask for **importable my-slides JSON**:\n\n- Single object with `\"version\": 1`, `\"title\"`, `\"slides\"`.\n- Each slide needs `\"markdown\"` (Reveal-ready Markdown).\n- Optional: `slug`, `templateId`, `visibility`, `meta`, per-slide `layout`, `notes`, `background`.\n\nIn the CMS header, open **Agent guide** (robot icon) for the full prompt template and schema summary."
+    },
+    {
+      "id": "agent-prompt",
+      "layout": "content",
+      "markdown": "## Example prompt to copy\n\n```text\nCreate a my-slides presentation JSON (version 1) about [TOPIC].\n\nRules:\n- Output ONLY valid JSON, no markdown fences.\n- Include title, slug (kebab-case), templateId \"astro\", visibility \"public\".\n- 8–12 slides: title, section dividers, content slides with bullets.\n- Each slide: id, layout (title|section|content|two-column), markdown, notes.\n- One main idea per slide. Use ## headings and bullet lists.\n\nReference structure: docs/examples/reference-presentation.json in my-slides repo.\n```"
+    },
+    {
+      "id": "agent-import-step",
+      "layout": "content",
+      "markdown": "## After the agent responds\n\n1. Save the JSON to a file (e.g. `my-deck.json`).\n2. Validate: required fields `version`, `title`, `slides[].markdown`.\n3. **Import JSON** on the home page, or paste via API `POST /api/presentations/import`.\n4. Edit in the CMS, then **Present** to review.\n\nRepo examples: `docs/examples/reference-presentation.json`, `docs/presentation-schema.json`."
+    },
+    {
+      "id": "section-tips",
+      "layout": "section",
+      "markdown": "## Tips"
+    },
+    {
+      "id": "tips-markdown",
+      "layout": "content",
+      "markdown": "## Markdown that works well\n\n- `#` / `##` for slide titles\n- Bullet lists with `-`\n- Fenced code blocks with triple backticks\n- Tables with `| col | col |`\n- Horizontal rule `---` on its own line for two-column feel\n\n**Astro backgrounds:** set `backgroundScene` to `none`, `minimal`, or `full` in JSON or the editor."
+    },
+    {
+      "id": "close",
+      "layout": "title",
+      "markdown": "# You're ready\n\nCreate · Import · Present\n\n`/p/how-to-create-presentations`",
+      "notes": "End of help deck."
+    }
+  ]
+}

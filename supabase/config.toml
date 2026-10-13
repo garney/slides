@@ -1,0 +1,17 @@
+# Minimal Supabase CLI config. Run: supabase link --project-ref <ref>  then  supabase db push
+# Docs: https://supabase.com/docs/guides/cli
+
+project_id = "slides"
+
+[api]
+enabled = true
+port = 54321
+
+[db]
+port = 54322
+major_version = 15
+
+[auth]
+enabled = true
+site_url = "http://localhost:3090"
+additional_redirect_urls = ["http://localhost:3090/auth/callback"]

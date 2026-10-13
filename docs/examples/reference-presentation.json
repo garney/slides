@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "title": "Reference deck for my-slides",
+  "slug": "reference-deck",
+  "templateId": "astro",
+  "visibility": "public",
+  "meta": {
+    "description": "Canonical example for AI agents generating importable my-slides JSON.",
+    "author": "my-slides",
+    "purpose": "Copy structure and field names; replace title, slug, and slide markdown with the user's topic."
+  },
+  "slides": [
+    {
+      "id": "title-1",
+      "layout": "title",
+      "markdown": "# Presentation title\n\nSubtitle or event name · Speaker name",
+      "notes": "Open with the topic and who is presenting. Keep title slide to one headline plus one supporting line."
+    },
+    {
+      "id": "section-1",
+      "layout": "section",
+      "markdown": "## Section: context\n\nOne line on what this section covers",
+      "notes": "Use section slides to divide major parts of the talk."
+    },
+    {
+      "id": "content-bullets",
+      "layout": "content",
+      "markdown": "## Key points\n\n- First idea stated in plain language\n- Second idea with a concrete detail\n- Third idea and why it matters\n\n**Takeaway:** one sentence the audience should remember.",
+      "notes": "Prefer 3–5 bullets per slide. Put the takeaway in bold on the last line when useful."
+    },
+    {
+      "id": "content-code",
+      "layout": "content",
+      "markdown": "## Example: code or config\n\n```bash\nnpm run dev\n```\n\n```json\n{ \"version\": 1, \"title\": \"My deck\" }\n```",
+      "notes": "Use fenced code blocks for commands, JSON, or snippets. One concept per slide."
+    },
+    {
+      "id": "content-two-col-hint",
+      "layout": "two-column",
+      "markdown": "## Compare or contrast\n\n**Option A**\n\n- Pro one\n- Pro two\n\n---\n\n**Option B**\n\n- Pro one\n- Pro two",
+      "notes": "For two-column layout, separate columns with a horizontal rule `---` on its own line in markdown when it reads better as two blocks."
+    },
+    {
+      "id": "content-table",
+      "layout": "content",
+      "markdown": "## Quick reference\n\n| Field | Required | Example |\n| --- | --- | --- |\n| `version` | yes | `1` |\n| `title` | yes | `\"Q4 review\"` |\n| `slides` | yes | array of slide objects |\n| `templateId` | no | `\"astro\"`, `\"dark\"`, `\"default\"` |\n| `visibility` | no | `\"public\"` or `\"authenticated\"` |",
+      "notes": "Tables work in markdown. Escape backticks inside table cells if needed."
+    },
+    {
+      "id": "content-background",
+      "layout": "content",
+      "markdown": "## Slide with custom background\n\nThis slide sets `background` to a dark color (see JSON).",
+      "background": "#1a2332",
+      "notes": "Optional per-slide background: hex color, or Reveal.js image URL syntax if you use a full URL in the background field."
+    },
+    {
+      "id": "section-2",
+      "layout": "section",
+      "markdown": "## Section: close",
+      "notes": "Transition to summary or Q&A."
+    },
+    {
+      "id": "closing",
+      "layout": "title",
+      "markdown": "# Thank you\n\nQuestions · contact@example.com",
+      "notes": "End slide: thanks, link, or call to action."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "title": "Welcome to my-slides",
+  "slug": "welcome-demo",
+  "templateId": "astro",
+  "visibility": "public",
+  "meta": {
+    "author": "You"
+  },
+  "slides": [
+    {
+      "id": "intro",
+      "layout": "title",
+      "markdown": "# my-slides\n\nCreate, import, and present with Reveal.js"
+    },
+    {
+      "id": "features",
+      "layout": "content",
+      "markdown": "## What you get\n\n- CMS editor with Markdown per slide\n- JSON import and export\n- Multiple Reveal.js themes\n- Public or Cognito-locked links (when deployed)"
+    },
+    {
+      "id": "markdown",
+      "layout": "content",
+      "markdown": "## Markdown basics\n\n```markdown\n## Heading\n\n- Bullet one\n- Bullet two\n\n**Bold** and *italic*\n```"
+    },
+    {
+      "id": "next",
+      "layout": "section",
+      "markdown": "## Next steps\n\nEdit this deck in the CMS or replace it entirely via **Import JSON**."
+    }
+  ]
+}

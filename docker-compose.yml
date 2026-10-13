@@ -1,0 +1,13 @@
+# Production-style single container. Database and auth come from hosted Supabase (or `supabase start` on the host).
+# Usage: cp .env.example .env  →  docker compose up --build
+
+services:
+  app:
+    build: .
+    ports:
+      - "3090:3090"
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PORT: 3090

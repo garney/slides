@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "title": "Mandalorian sprint review",
+  "slug": "sprint-review-2026-09-29",
+  "templateId": "astro",
+  "visibility": "public",
+  "meta": {
+    "team": "SA FT1 Mandalorian",
+    "date": "2026-09-29",
+    "presenter": "Garney",
+    "backgroundScene": "minimal",
+    "backgroundOpacity": 0.5
+  },
+  "slides": [
+    {
+      "id": "title",
+      "layout": "title",
+      "markdown": "# Sprint review\n\nSA FT1 Mandalorian · 29 Sep 2026",
+      "notes": "Garney presenting demos per Yuko's list (demo order adjusted)."
+    },
+    {
+      "id": "agenda",
+      "layout": "content",
+      "markdown": "## Demo flow\n\n1. **Entity tag**\n2. **Upload document**\n3. **Entity tag** + **Disclaimer** (Back Office email templates)\n\n_Reference: duplicate account rules (following slides)_"
+    },
+    {
+      "id": "demo-entity-tag",
+      "layout": "content",
+      "markdown": "## Demo: Entity tag\n\n- Show assigning / viewing entity tags in Back Office\n- Call out where tags drive workflow or reporting"
+    },
+    {
+      "id": "demo-upload-document",
+      "layout": "content",
+      "markdown": "## Demo: Upload document\n\n- Upload path in Back Office (KYC / registration context)\n- Expected status after upload"
+    },
+    {
+      "id": "demo-disclaimer",
+      "layout": "content",
+      "markdown": "## Demo: Entity tag + Disclaimer\n\n- **Entity tag** tied to partial duplicate / review flows where applicable\n- **Disclaimer** for email templates in Back Office"
+    },
+    {
+      "id": "duplicate-section",
+      "layout": "section",
+      "markdown": "## Duplicate account check\n\nBusiness rules (account-service)"
+    },
+    {
+      "id": "duplicate-when",
+      "layout": "content",
+      "markdown": "## When it runs\n\n- After **Liquid eKYC approval** on the KYC callback\n- Before **activation** and **watchlist**\n- Gate order: **full duplicate → partial match → watchlist**"
+    },
+    {
+      "id": "duplicate-corpus",
+      "layout": "content",
+      "markdown": "## Search corpus\n\n- Compare the **new** registration to **other** accounts only (`id` ≠ applicant)\n- **`is_test_account = 0`** — test rows never match (team agreed to keep)\n- **Counted statuses** only: Active, Restricted, pending closure, abuse force-closes, etc.\n- Incomplete registration and ordinary **Closed** are ignored"
+    },
+    {
+      "id": "duplicate-identity",
+      "layout": "content",
+      "markdown": "## Identity matched\n\n- Applicant must have **kanji first + last name + valid DOB** from approved eKYC\n- Match is **exact** on stored kanji names + DOB (no fuzzy normalize in query)"
+    },
+    {
+      "id": "duplicate-full",
+      "layout": "content",
+      "markdown": "## Full match (confirmed duplicate)\n\n- Same kanji **first** and **last** and **DOB** as an existing counted account\n- New account → **`Force Close - Duplicate Account`** (stop; no watchlist on this path)\n- Slack: _Duplicate Account Confirmed Match - Registration Blocked_"
+    },
+    {
+      "id": "duplicate-partial",
+      "layout": "content",
+      "markdown": "## Partial match\n\n- Same **DOB** and **either** kanji first **or** last name — not both names\n- Do **not** activate — hold **`Registration - KYC Document Uploaded`**\n- Entity tag **`partial_duplicate_match`** + Slack partial match alert"
+    },
+    {
+      "id": "duplicate-fail-open",
+      "layout": "content",
+      "markdown": "## Fail open\n\nNot treated as duplicate when:\n\n- Master or partial check **disabled**\n- **DB error** or **missing identity** on the new account\n\nActivation can continue on those paths.",
+      "notes": "Source: account-service duplicate + partial match services; Slack thread 2026-09-29."
+    },
+    {
+      "id": "close",
+      "layout": "title",
+      "markdown": "# Questions?",
+      "notes": "Thank the team; link slides /p/sprint-review-2026-09-29"
+    }
+  ]
+}

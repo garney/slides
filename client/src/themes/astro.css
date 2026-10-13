@@ -1,0 +1,117 @@
+.reveal.theme-astro .slides section {
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem 3rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(125, 211, 252, 0.35) transparent;
+}
+
+.reveal.theme-astro .slides section .slide-markdown {
+  font-size: 0.88em;
+  line-height: 1.35;
+}
+
+.reveal.theme-astro .slides section .slide-markdown ul,
+.reveal.theme-astro .slides section .slide-markdown ol {
+  margin: 0.35em 0;
+}
+
+.reveal.theme-astro .slides section .slide-markdown li {
+  margin-bottom: 0.3em;
+}
+
+.reveal.theme-astro .slides section .slide-markdown pre {
+  font-size: 0.72em;
+  margin: 0.5em 0;
+}
+
+.reveal.theme-astro .slides section .slide-markdown h1 {
+  font-size: 1.6em;
+  margin-bottom: 0.35em;
+}
+
+.reveal.theme-astro .slides section .slide-markdown h2 {
+  font-size: 1.25em;
+  margin-bottom: 0.35em;
+}
+
+.reveal.theme-astro {
+  background: radial-gradient(circle at 20% 20%, #1b2a4a 0%, #0b1020 55%, #05070f 100%);
+}
+
+.present-shell--space-bg {
+  background: #080b2c;
+}
+
+.reveal-viewport--space-bg,
+.reveal-viewport--space-bg .reveal.theme-astro,
+.reveal-viewport--space-bg .reveal.theme-astro-transparent,
+.reveal-viewport--space-bg .reveal .slides section {
+  background: transparent !important;
+}
+
+.reveal-viewport--space-bg {
+  position: relative;
+  z-index: 1;
+}
+
+.astro-space-background-host {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.reveal.theme-astro h1,
+.reveal.theme-astro h2,
+.reveal.theme-astro h3 {
+  color: #e8f0ff;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.reveal.theme-astro p,
+.reveal.theme-astro li {
+  color: #c8d4ef;
+}
+
+.reveal.theme-astro strong {
+  color: #7dd3fc;
+}
+
+.reveal.theme-astro code {
+  background: rgba(125, 211, 252, 0.12);
+  color: #bae6fd;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.reveal.theme-astro a {
+  color: #38bdf8;
+}
+
+.reveal.theme-astro pre {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+}
+
+.reveal.theme-astro pre code {
+  background: transparent;
+  color: #e2e8f0;
+}
+
+.reveal.theme-astro table th,
+.reveal.theme-astro table td {
+  color: #c8d4ef;
+  border-color: rgba(200, 212, 239, 0.25);
+}
+
+.reveal .slides section img {
+  max-height: 420px;
+  max-width: min(900px, 90vw);
+  object-fit: contain;
+  margin: 0.5rem auto;
+  display: block;
+}

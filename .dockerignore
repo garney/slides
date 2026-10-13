@@ -1,0 +1,9 @@
+node_modules
+dist
+.env
+.git
+*.log
+.DS_Store
+infra/pulumi/node_modules
+infra/pulumi/bin
+image-tag.txt

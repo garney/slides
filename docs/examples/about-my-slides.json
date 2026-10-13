@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "title": "About my-slides",
+  "slug": "about-my-slides",
+  "templateId": "astro",
+  "visibility": "public",
+  "meta": {
+    "description": "Short intro to the my-slides CMS and presenter."
+  },
+  "backgroundScene": "minimal",
+  "backgroundOpacity": 0.45,
+  "slides": [
+    {
+      "id": "title",
+      "layout": "title",
+      "markdown": "# my-slides\n\nBuild decks in a browser · Present with Reveal.js",
+      "notes": "Simple overview deck for demos and onboarding."
+    },
+    {
+      "id": "what",
+      "layout": "content",
+      "markdown": "## What it is\n\n- A small **web CMS** for slide decks\n- Each slide is **Markdown** (headings, lists, code, tables)\n- **MySQL** stores the full deck as JSON\n- **Reveal.js** runs fullscreen at `/p/your-slug`"
+    },
+    {
+      "id": "why",
+      "layout": "content",
+      "markdown": "## Why this stack\n\n- **Portable JSON** — export, import, hand to an AI agent, version in git\n- **Reveal.js** — mature themes, speaker notes, shareable links\n- **Not Slidev** — Slidev is great for repo-local dev talks; my-slides is for **multi-user** hosting and editing in the UI"
+    },
+    {
+      "id": "workflow",
+      "layout": "content",
+      "markdown": "## Typical workflow\n\n1. **New presentation** — title, slug, template, visibility\n2. **Edit** slides in the CMS\n3. **Present** — open `/p/slug` (public or sign-in only)\n4. **Export JSON** — backup or edit elsewhere\n5. **Import JSON** — new deck or replace in place"
+    },
+    {
+      "id": "features",
+      "layout": "content",
+      "markdown": "## Built-in today\n\n- Templates: `default`, `dark`, `night`, `astro`, `minimal`\n- Visibility: **public** or **authenticated** (Cognito when deployed)\n- Image upload → S3 (LocalStack locally)\n- Header **Help** deck + **Agent guide** for JSON prompts"
+    },
+    {
+      "id": "links",
+      "layout": "section",
+      "markdown": "## Where to learn more"
+    },
+    {
+      "id": "learn",
+      "layout": "content",
+      "markdown": "## Docs in the repo\n\n- `README.md` — local Docker and API\n- `docs/presentation-schema.json` — field reference\n- `docs/examples/how-to-create-presentations.json` — full CMS + agent guide\n\nPresenter URL for this deck: **`/p/about-my-slides`**"
+    },
+    {
+      "id": "close",
+      "layout": "title",
+      "markdown": "# Thanks\n\nCreate · Import · Present",
+      "notes": "End of about deck."
+    }
+  ]
+}

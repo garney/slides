@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://my-slides.local/schema/presentation-v1.json",
+  "title": "Presentation",
+  "type": "object",
+  "required": ["version", "title", "slides"],
+  "properties": {
+    "version": { "const": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "templateId": {
+      "type": "string",
+      "enum": ["default", "dark", "night", "astro", "minimal"]
+    },
+    "visibility": {
+      "type": "string",
+      "enum": ["public", "authenticated"]
+    },
+    "meta": { "type": "object" },
+    "backgroundScene": {
+      "type": "string",
+      "enum": ["none", "minimal", "full"]
+    },
+    "backgroundOpacity": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 1
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["markdown"],
+        "properties": {
+          "id": { "type": "string" },
+          "layout": {
+            "type": "string",
+            "enum": ["title", "section", "content", "two-column"]
+          },
+          "markdown": { "type": "string" },
+          "notes": { "type": "string" },
+          "background": { "type": "string" }
+        }
+      }
+    }
+  }
+}
