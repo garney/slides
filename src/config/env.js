@@ -46,7 +46,7 @@ const supabaseUrl = process.env.SUPABASE_URL?.trim() || "";
 const supabaseAnonKey = process.env.SUPABASE_ANON_KEY?.trim() || "";
 
 export const config = {
-  port: Number(process.env.PORT || 3090),
+  port: Number(process.env.PORT || 3091),
   publicUrl: process.env.APP_PUBLIC_URL || "",
   helpPresentationUrl: resolveHelpPresentationUrl(process.env.APP_HELP_PRESENTATION_URL),
   mcp: {

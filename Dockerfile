@@ -14,7 +14,7 @@ FROM node:20-alpine
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV PORT=3090
+ENV PORT=3091
 
 COPY --from=build /app/package.json ./
 COPY --from=build /app/node_modules ./node_modules
@@ -22,6 +22,6 @@ COPY --from=build /app/src ./src
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/db ./db
 
-EXPOSE 3090
+EXPOSE 3091
 
 CMD ["node", "src/server.js"]

@@ -13,5 +13,5 @@ major_version = 15
 
 [auth]
 enabled = true
-site_url = "http://localhost:3090"
-additional_redirect_urls = ["http://localhost:3090/auth/callback"]
+site_url = "http://localhost:3091"
+additional_redirect_urls = ["http://localhost:3091/auth/callback"]

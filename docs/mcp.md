@@ -5,7 +5,7 @@ Streamable HTTP MCP is served on the **same app** as the CMS (no extra pod).
 | Environment | URL |
 | --- | --- |
 | Test | `https://my-slides.stationalpha.com/mcp` |
-| Local | `http://localhost:3090/mcp` |
+| Local | `http://localhost:3091/mcp` |
 
 Set `MCP_ENABLED=false` to disable the endpoint.
 

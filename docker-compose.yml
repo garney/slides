@@ -5,9 +5,10 @@ services:
   app:
     build: .
     ports:
-      - "3090:3090"
+      - "3091:3091"
     env_file:
       - .env
     environment:
       NODE_ENV: production
-      PORT: 3090
+      PORT: 3091
+      APP_PUBLIC_URL: http://localhost:3091

@@ -53,7 +53,7 @@ Re-run to refresh content from the JSON file (replace by slug).
 Use Markdown in any slide:
 
 ```markdown
-![Screenshot alt text](http://localhost:3090/api/assets/uploads%2Fabc.png)
+![Screenshot alt text](http://localhost:3091/api/assets/uploads%2Fabc.png)
 ```
 
 In the CMS editor, **Upload image** on a slide stores the file in S3 (LocalStack locally) and inserts the URL. Images are served from `GET /api/assets/:key`.

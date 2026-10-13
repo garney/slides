@@ -30,8 +30,8 @@ You do **not** need CloudFront or a separate CDN for a personal site unless you 
 3. **Auth** — Authentication → Providers → Email: enable.  
    For local dev, turn off “Confirm email” or confirm via inbox.  
    Add your site URL under Authentication → URL configuration:
-   - Site URL: `http://localhost:3090` (and your production domain later)
-   - Redirect URLs: `http://localhost:3090/auth/callback`, `https://yourdomain.com/auth/callback`
+   - Site URL: `http://localhost:3091` (and your production domain later; port **3091** avoids clashing with my-slides on 3090)
+   - Redirect URLs: `http://localhost:3091/auth/callback`, `https://yourdomain.com/auth/callback`
 
 4. Copy env:
 
@@ -46,7 +46,7 @@ You do **not** need CloudFront or a separate CDN for a personal site unless you 
    ```bash
    npm install
    npm run migrate   # optional if you already applied SQL in the dashboard
-   npm run dev       # API + Vite on http://localhost:3090
+   npm run dev       # API + Vite on http://localhost:3091
    ```
 
 6. Register in the UI, then create decks at `/`.
